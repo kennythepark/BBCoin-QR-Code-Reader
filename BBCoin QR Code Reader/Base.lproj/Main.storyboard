@@ -44,11 +44,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="150" y="32"/>
         </scene>
-        <!--View Controller-->
+        <!--Payment Approval View Controller-->
         <scene sceneID="QhX-Pz-fRh">
             <objects>
-                <viewController id="ORX-zZ-kOp" sceneMemberID="viewController">
+                <viewController id="ORX-zZ-kOp" customClass="PaymentApprovalViewController" customModule="BBCoin_QR_Code_Reader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CJX-KG-gOx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,9 +86,14 @@
                                     <segue destination="mrV-J9-mPk" kind="unwind" unwindAction="unwindBackToScanWithSegue:" id="8kB-uU-58c"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="q4V-H8-WZo">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.085368834435939789" green="0.22613909840583801" blue="0.38041085004806519" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="q4V-H8-WZo" firstAttribute="centerY" secondItem="CJX-KG-gOx" secondAttribute="centerY" id="8GB-M5-XEf"/>
                             <constraint firstItem="cWm-vU-Fbk" firstAttribute="centerX" secondItem="CJX-KG-gOx" secondAttribute="centerX" id="Jgw-Wz-lzb"/>
                             <constraint firstItem="TAt-R2-gEg" firstAttribute="top" secondItem="4tg-o6-9YO" secondAttribute="bottom" constant="20" id="KTa-GV-0y7"/>
                             <constraint firstAttribute="trailing" secondItem="4tg-o6-9YO" secondAttribute="trailing" id="aG1-hE-d54"/>
@@ -96,9 +102,16 @@
                             <constraint firstItem="cWm-vU-Fbk" firstAttribute="top" secondItem="TAt-R2-gEg" secondAttribute="bottom" constant="100" id="h6h-4I-kZP"/>
                             <constraint firstItem="4tg-o6-9YO" firstAttribute="centerX" secondItem="CJX-KG-gOx" secondAttribute="centerX" id="j28-e5-mzW"/>
                             <constraint firstItem="TAt-R2-gEg" firstAttribute="centerY" secondItem="CJX-KG-gOx" secondAttribute="centerY" id="k04-ce-6kj"/>
+                            <constraint firstItem="q4V-H8-WZo" firstAttribute="centerX" secondItem="CJX-KG-gOx" secondAttribute="centerX" id="uar-Wk-eVY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="suY-13-1MP"/>
                     </view>
+                    <connections>
+                        <outlet property="approvalLabel" destination="TAt-R2-gEg" id="OMK-qX-qKX"/>
+                        <outlet property="loadingIndicator" destination="q4V-H8-WZo" id="UAP-aj-hkR"/>
+                        <outlet property="logoImageView" destination="4tg-o6-9YO" id="cK9-wg-Kk7"/>
+                        <outlet property="scanAgainButton" destination="cWm-vU-Fbk" id="0Nq-VC-dvy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2H-HF-8A7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mrV-J9-mPk" userLabel="Exit" sceneMemberID="exit"/>

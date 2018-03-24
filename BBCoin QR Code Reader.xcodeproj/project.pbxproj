@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB1FB1712066EB6D0095F155 /* PaymentApprovalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FB1702066EB6D0095F155 /* PaymentApprovalViewController.swift */; };
 		FBB19B132066C9870005444B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB19B122066C9870005444B /* AppDelegate.swift */; };
 		FBB19B152066C9870005444B /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB19B142066C9870005444B /* ScanViewController.swift */; };
 		FBB19B182066C9870005444B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB19B162066C9870005444B /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB1FB1702066EB6D0095F155 /* PaymentApprovalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentApprovalViewController.swift; sourceTree = "<group>"; };
 		FBB19B0F2066C9870005444B /* BBCoin QR Code Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBCoin QR Code Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB19B122066C9870005444B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB19B142066C9870005444B /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				FBB19B122066C9870005444B /* AppDelegate.swift */,
 				FBB19B142066C9870005444B /* ScanViewController.swift */,
+				FB1FB1702066EB6D0095F155 /* PaymentApprovalViewController.swift */,
 				FBB19B162066C9870005444B /* Main.storyboard */,
 				FBB19B192066C9870005444B /* Assets.xcassets */,
 				FBB19B1B2066C9870005444B /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBB19B152066C9870005444B /* ScanViewController.swift in Sources */,
+				FB1FB1712066EB6D0095F155 /* PaymentApprovalViewController.swift in Sources */,
 				FBB19B132066C9870005444B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

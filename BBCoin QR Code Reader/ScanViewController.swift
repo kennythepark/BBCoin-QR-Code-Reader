@@ -91,34 +91,44 @@ extension ScanViewController: AVCaptureMetadataOutputObjectsDelegate {
         AudioServicesPlayAlertSound(systemSoundId)
         statusLabel.text = validatingStatus
         
-        performSegue(withIdentifier: "successfulValidation", sender: self)
-        captureSession?.stopRunning()
+        postClientAddress(address: stringCodeValue) { result in
+            if result {
+                performSegue(withIdentifier: "successfulValidation", sender: self)
+                captureSession?.stopRunning()
+            }
+        }
     }
     
 }
 
 // MARK: Network Request
 extension ScanViewController {
-    let url = URL(string: "http://www.thisismylink.com/postName.php")!
-    var request = URLRequest(url: url)
-    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-    request.httpMethod = "POST"
-    let postString = "id=13&name=Jack"
-    request.httpBody = postString.data(using: .utf8)
-    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-        guard let data = data, error == nil else {                                                 // check for fundamental networking error
-            print("error=\(error)")
-            return
-        }
+    
+    func postClientAddress(address: String, completion: (_: Bool) -> Void)  {
+//        let url = URL(string: "http://www.thisismylink.com/postName.php")!
+//        var request = URLRequest(url: url)
+//        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+//        request.httpMethod = "POST"
+//        let postString = address
+//        request.httpBody = postString.data(using: .utf8)
+//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+//            guard let data = data, error == nil else {
+//                print("error=\(String(describing: error))")
+//                return
+//            }
+//
+//            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+//                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+//                print("response = \(String(describing: response))")
+//            }
+//
+//            let responseString = String(data: data, encoding: .utf8)
+//            print("responseString = \(String(describing: responseString))")
+//        }
+//        task.resume()
         
-        if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-            print("statusCode should be 200, but is \(httpStatus.statusCode)")
-            print("response = \(response)")
-        }
-        
-        let responseString = String(data: data, encoding: .utf8)
-        print("responseString = \(responseString)")
+        completion(true)
     }
-    task.resume()
+    
 }
 
